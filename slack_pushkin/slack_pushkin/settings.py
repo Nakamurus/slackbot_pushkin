@@ -20,7 +20,6 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '%^a5k@p$mu)20u!g#g9y$n(v9942vonz(d_oabh=w5)f3na-9o'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -128,9 +127,3 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 # SLACK API Configurations
 # ----------------------------------------------
 # use your keys 
-SLACK_CLIENT_ID = '630757775589.625033501331'
-SLACK_CLIENT_SECRET = '93870e2d92ee66a434b580c957dae9c3'
-SLACK_VERIFICATION_TOKEN = 'tiQLBnNByAoj5oBxayXkFmaG'
-SLACK_BOT_USER_TOKEN = 'xoxb-630757775589-630137021633-TfOwlQf5lTUlrFlVVHp1WEPX'
-
-
