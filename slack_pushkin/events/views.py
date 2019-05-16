@@ -41,9 +41,8 @@ class Events(APIView):
                     Client.chat_postMessage(
                         channel=channel,
                         text=i)
-                    return Response(status=status.HTTP_200_OK)
                 bot_text = None    # prevent endless response
-                
+                return Response(status=status.HTTP_200_OK)
                 
         return Response(status=status.HTTP_200_OK)
                 
