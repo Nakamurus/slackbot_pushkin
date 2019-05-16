@@ -57,15 +57,16 @@ def word_in_pushkin(word, window=2):
         else:
           yield work[i-window:i+window]
           
-          
-def sample_work(works, num=2):
-  """
-  randomly choose 2 fragments with keyword
-  """
+def sample_work(works, num=3):
+  fragments = None
   try:
     samples = [x for x in works]
-    for flatten_list in random.sample(samples, num): # flatten list and yield one by one
-      yield flatten_list
-  except ValueError:  # if there's not a word, that user input, return answer
-    answer = 'Даже Пушкин не знает обо всем...'
-    yield answer
+    for i in range(num):
+      fragments = [sent for sent in random.sample(samples, i+1)] # flatten list and yield one by one
+      fragments = fragments[-i-1:]  
+    return fragments
+  except ValueError:  # if there's notm,3 a word, that user input, return answer
+    if fragments:
+      return fragments
+    else:
+      return [['Даже Пушкин не знает обо всем...']]
