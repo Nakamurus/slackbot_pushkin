@@ -58,15 +58,14 @@ def word_in_pushkin(word, window=2):
           yield work[i-window:i+window]
           
 def sample_work(works, num=3):
-  fragments = None
+  fragments = None # to prevent error in the line 69
   try:
     samples = [x for x in works]
     for i in range(num):
-      fragments = [sent for sent in random.sample(samples, i+1)] # flatten list and yield one by one
-      fragments = fragments[-i-1:]  
+      fragments = [sent for sent in random.sample(samples, i+1)] # 
     return fragments
-  except ValueError:  # if there's notm,3 a word, that user input, return answer
-    if fragments:
+  except ValueError:  
+    if fragments: # if there's the keyword, but not in 3 fragments
       return fragments
-    else:
+    else:     # if there's not the keyword in the corpus
       return [['Даже Пушкин не знает обо всем...']]
